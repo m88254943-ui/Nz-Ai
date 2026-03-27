@@ -2,102 +2,51 @@
 <html lang="zh-TW">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>New Zealand Journey | 17 Days Elite Tour</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NZ 17 Days</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500&family=Noto+Serif+TC:wght@700;900&display=swap" rel="stylesheet">
-    
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        'ins-lavender': '#F8F5FF',
-                        'ins-purple-soft': '#E9D5FF',
-                        'ins-purple-dark': '#6B21A8',
-                        'ins-gray': '#6B7280',
-                    },
-                    borderRadius: { 'ins': '24px' },
-                    fontFamily: {
-                        serif: ['Noto Serif TC', 'serif'],
-                        sans: ['Noto Sans TC', 'sans-serif'],
-                    },
-                    boxShadow: { 'ins-card': '0 10px 25px rgba(107, 33, 168, 0.04)' }
-                }
-            }
-        }
-    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@900&display=swap" rel="stylesheet">
     <style>
-        html { scroll-behavior: smooth; }
-        body { background-color: #F8F5FF; color: #4B5563; -webkit-font-smoothing: antialiased; }
-        .img-overlay::after {
-            content: ''; position: absolute; bottom: 0; left: 0; width: 100%; height: 60%;
-            background: linear-gradient(to top, rgba(0,0,0,0.4), transparent);
-        }
-        /* 避免圖片在載入前顯示空白 */
-        .img-placeholder { background-color: #E9D5FF; }
+        body { background-color: #F8F5FF; font-family: sans-serif; }
+        .serif { font-family: 'Noto Serif TC', serif; font-weight: 900; }
+        .card-shadow { box-shadow: 0 10px 25px rgba(107, 33, 168, 0.05); }
     </style>
 </head>
-<body class="font-sans">
+<body>
+    <div class="max-w-md mx-auto p-4 space-y-6">
+        <h1 class="serif text-4xl text-purple-900 mt-8 mb-4 text-center">紐西蘭 17 天</h1>
+        <p class="text-center text-purple-400 text-sm tracking-widest mb-10">SUMMER TOUR 2026</p>
 
-    <header class="relative h-[50vh] flex items-end justify-start p-8 overflow-hidden">
-        <img src="https://loremflickr.com/800/1200/newzealand,mountain/all" class="absolute inset-0 w-full h-full object-cover" alt="Cover">
-        <div class="absolute inset-0 bg-black opacity-30"></div>
-        <div class="relative z-10 text-white">
-            <p class="text-[10px] tracking-[0.3em] uppercase opacity-80 mb-1">Summer Expedition 2026</p>
-            <h1 class="font-serif font-black text-4xl mb-4">紐西蘭縱貫之旅</h1>
-            <div class="flex items-center gap-2">
-                <span class="bg-white/20 backdrop-blur-md text-white text-[10px] px-3 py-1 rounded-full">17 DAYS</span>
+        <div class="bg-white rounded-[24px] overflow-hidden card-shadow">
+            <img src="https://images.unsplash.com/photo-1598091857921-b054817a7833?w=800" class="w-full h-48 object-cover">
+            <div class="p-6">
+                <span class="text-purple-300 text-xs font-bold">DAY 01 · 6/5</span>
+                <h2 class="serif text-xl text-purple-900 mt-1">基督城啟程</h2>
+                <p class="text-gray-500 text-sm mt-2 leading-relaxed">抵達南島基督城，機場取車後漫步雅芳河畔，調整時差。</p>
             </div>
         </div>
-    </header>
 
-    <main class="p-5 space-y-8" id="itinerary"></main>
+        <div class="bg-white rounded-[24px] overflow-hidden card-shadow">
+            <img src="https://images.unsplash.com/photo-1621200115016-1681a2988f62?w=800" class="w-full h-48 object-cover">
+            <div class="p-6">
+                <span class="text-purple-300 text-xs font-bold">DAY 02 · 6/6</span>
+                <h2 class="serif text-xl text-purple-900 mt-1">蒂卡波湖星空</h2>
+                <p class="text-gray-500 text-sm mt-2 leading-relaxed">拜訪牧羊人教堂，在世界級暗空保護區看銀河。</p>
+            </div>
+        </div>
 
-    <footer class="bg-ins-purple-dark text-ins-purple-soft text-center p-8 mt-10 font-serif text-xs">
-        New Zealand Elite Tour | 2026
-    </footer>
+        <div class="bg-white rounded-[24px] overflow-hidden card-shadow">
+            <img src="https://images.unsplash.com/photo-1600109915409-760778732a39?w=800" class="w-full h-48 object-cover">
+            <div class="p-6">
+                <span class="text-purple-300 text-xs font-bold">DAY 03 · 6/7</span>
+                <h2 class="serif text-xl text-purple-900 mt-1">庫克山健行</h2>
+                <p class="text-gray-500 text-sm mt-2 leading-relaxed">Hooker Valley Track 健行，近距離看冰川與浮冰。</p>
+            </div>
+        </div>
 
-    <script>
-        const days = [
-            { day: "01", date: "6/5 (五)", loc: "Christchurch", title: "南島啟程", desc: "抵達機場取車。下午漫步市區、欣賞雅芳河，遊覽植物園調整時差。", img: "christchurch,nz" },
-            { day: "02", date: "6/6 (六)", loc: "Tekapo", title: "夢幻藍湖", desc: "前往 Lake Tekapo 參觀牧羊人教堂。晚上欣賞世界級暗空保護區星空。", img: "tekapo,church" },
-            { day: "03", date: "6/7 (日)", loc: "Mt Cook", title: "冰川健行", desc: "國家公園 Hooker Valley Track 健行，近距離欣賞冰川與雪山。", img: "mountcook,glacier" },
-            { day: "04", date: "6/8 (一)", loc: "Wanaka", title: "湖畔小鎮", desc: "經 Lindis Pass 前往 Wanaka。傍晚拍攝著名的 Wanaka Tree 孤獨樹。", img: "wanaka,lake" },
-            { day: "05", date: "6/9 (二)", loc: "Wanaka", title: "漫遊時光", desc: "Wanaka 悠閒活動。可自由安排湖邊散步、租單車或挑戰健行步道。", img: "wanaka,mountain" },
-            { day: "06", date: "6/10 (三)", loc: "Franz Josef", title: "穿越峽谷", desc: "穿越 Haast Pass 前往西海岸，沿途盡是雨林、瀑布與峽谷景觀。", img: "nz,rainforest" },
-            { day: "07", date: "6/11 (四)", loc: "Franz Josef Glacier", title: "藍冰探險", desc: "直升機冰川健行 (Heli Hike)。降落在冰川上穿梭於藍色冰洞之間。", img: "glacier,ice" },
-            { day: "08", date: "6/12 (五)", loc: "Wanaka", title: "重回高山", desc: "穿越 Haast Pass 回到內陸，再次欣賞南島壯麗的高山森林景色。", img: "nz,forest" },
-            { day: "09", date: "6/13 (六)", loc: "Queenstown", title: "冒險之都", desc: "抵達皇后鎮。搭乘 Skyline Gondola 到山頂俯瞰 Wakatipu 湖景。", img: "queenstown,lake" },
-            { day: "10", date: "6/14 (日)", loc: "Milford Sound", title: "世界奇觀", desc: "搭乘遊船遊覽 Milford Sound，欣賞峽灣瀑布、懸崖與海洋生態。", img: "milfordsound,nz" },
-            { day: "11", date: "6/15 (一)", loc: "Queenstown", title: "周邊漫遊", desc: "探索 Glenorchy 魔戒取景地或到古老的 Arrowtown 淘金小鎮。", img: "arrowtown,nz" },
-            { day: "12", date: "6/16 (二)", loc: "Queenstown", title: "自由靈魂", desc: "全日自由活動。可安排高空彈跳、湖畔散步或選購特產。", img: "queenstown,city" },
-            { day: "13", date: "6/17 (三)", loc: "Auckland", title: "飛往北島", desc: "飛往奧克蘭。下午前往 Waiwera Beach 感受北島海岸風情。", img: "auckland,beach" },
-            { day: "14", date: "6/18 (四)", loc: "Hobbiton", title: "哈比村夢", desc: "探訪魔戒哈比人洞穴。下午抵達地熱城市 Rotorua。", img: "hobbiton,nz" },
-            { day: "15", date: "6/19 (五)", loc: "Rotorua", title: "地熱仙境", desc: "參觀 Wai-O-Tapu，欣賞色彩斑斕的地熱池與氣體噴孔。", img: "rotorua,geothermal" },
-            { day: "16", date: "6/20 (六)", loc: "Waitomo", title: "地底星空", desc: "搭船進入 Waitomo 螢火蟲洞，欣賞如滿天星斗般的奇景。", img: "glowworm,cave" },
-            { day: "17", date: "6/21 (日)", loc: "Auckland", title: "珍重再見", desc: "前往奧克蘭機場搭機，結束這趟回憶滿滿的紐西蘭之旅。", img: "auckland,airport" }
-        ];
-
-        const container = document.getElementById('itinerary');
-        container.innerHTML = days.map(d => `
-            <section class="bg-white rounded-ins shadow-ins-card overflow-hidden">
-                <div class="relative h-52 overflow-hidden img-overlay img-placeholder">
-                    <img src="https://loremflickr.com/600/400/${d.img}" class="w-full h-full object-cover" alt="${d.loc}" loading="lazy">
-                    <div class="absolute top-4 left-4 z-10 bg-ins-purple-soft/90 backdrop-blur-sm text-ins-purple-dark text-center py-1.5 px-3 rounded-xl shadow-sm">
-                        <span class="font-serif font-black text-xl block">${d.day}</span>
-                        <span class="text-[8px] font-bold tracking-tighter uppercase">DAY</span>
-                    </div>
-                </div>
-                <div class="p-6">
-                    <div class="flex justify-between items-start mb-1">
-                        <p class="text-[11px] font-medium text-ins-purple-dark opacity-70 italic">${d.date} · ${d.loc}</p>
-                    </div>
-                    <h3 class="font-serif font-black text-xl text-ins-purple-dark mb-2">${d.title}</h3>
-                    <p class="text-xs leading-relaxed text-ins-gray font-light">${d.desc}</p>
-                </div>
-            </section>
-        `).join('');
-    </script>
+        <div class="text-center py-10 text-purple-200 serif text-xs italic">
+            ... 精采行程持續載入中 ...
+        </div>
+    </div>
 </body>
 </html>
