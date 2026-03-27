@@ -6,329 +6,98 @@
     <title>New Zealand Journey | 17 Days Elite Tour</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500&family=Noto+Serif+TC:wght@700;900&display=swap" rel="stylesheet">
-    
+    
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
-                        'ins-lavender': '#F8F5FF',    // 極淺紫背景
-                        'ins-purple-soft': '#E9D5FF', // 柔紫 (Badge/Accent)
-                        'ins-purple-dark': '#6B21A8', // 深紫 (文字)
-                        'ins-gray': '#6B7280',        // 內文灰
+                        'ins-lavender': '#F8F5FF',
+                        'ins-purple-soft': '#E9D5FF',
+                        'ins-purple-dark': '#6B21A8',
+                        'ins-gray': '#6B7280',
                     },
-                    borderRadius: {
-                        'ins': '24px',                // Canva 風格大圓角
-                    },
+                    borderRadius: { 'ins': '24px' },
                     fontFamily: {
                         serif: ['Noto Serif TC', 'serif'],
                         sans: ['Noto Sans TC', 'sans-serif'],
                     },
-                    boxShadow: {
-                        'ins-card': '0 10px 25px rgba(107, 33, 168, 0.04)', // 柔和陰影
-                    }
+                    boxShadow: { 'ins-card': '0 10px 25px rgba(107, 33, 168, 0.04)' }
                 }
             }
         }
     </script>
     <style>
-        /* 平滑滾動與基礎設定 */
         html { scroll-behavior: smooth; }
-        body { 
-            background-color: #F8F5FF; /* ins-lavender */
-            color: #4B5563;
-            -webkit-font-smoothing: antialiased;
-        }
-        /* 美化滾動條 */
-        ::-webkit-scrollbar { width: 4px; }
-        ::-webkit-scrollbar-thumb { background: #E9D5FF; border-radius: 10px; }
-        
-        /* 圖片漸變遮罩，確保文字清晰 */
+        body { background-color: #F8F5FF; color: #4B5563; -webkit-font-smoothing: antialiased; }
         .img-overlay::after {
-            content: '';
-            position: absolute;
-            bottom: 0; left: 0; width: 100%; height: 60%;
-            background: linear-gradient(to top, rgba(0,0,0,0.5), transparent);
+            content: ''; position: absolute; bottom: 0; left: 0; width: 100%; height: 60%;
+            background: linear-gradient(to top, rgba(0,0,0,0.4), transparent);
         }
+        /* 避免圖片在載入前顯示空白 */
+        .img-placeholder { background-color: #E9D5FF; }
     </style>
 </head>
 <body class="font-sans">
 
-    <header class="relative h-[60vh] flex items-end justify-start p-8 overflow-hidden">
-        <img src="https://images.unsplash.com/photo-1507699622108-4be3abd695ad?q=80&w=2000&auto=format&fit=crop" class="absolute inset-0 w-full h-full object-cover" alt="NZ Cover">
+    <header class="relative h-[50vh] flex items-end justify-start p-8 overflow-hidden">
+        <img src="https://loremflickr.com/800/1200/newzealand,mountain/all" class="absolute inset-0 w-full h-full object-cover" alt="Cover">
         <div class="absolute inset-0 bg-black opacity-30"></div>
-        <div class="relative z-10 text-white pb-6">
-            <p class="text-xs tracking-[0.3em] uppercase opacity-80 mb-2">Summer Expedition 2026</p>
-            <h1 class="font-serif font-black text-5xl leading-tight">紐西蘭<br>南北島縱貫</h1>
-            <div class="mt-6 flex items-center gap-2">
-                <span class="bg-white/20 backdrop-blur-md text-white text-[10px] px-3 py-1 rounded-full font-medium">17 DAYS</span>
-                <span class="text-sm opacity-90 font-light">6/5（五） - 6/21（日）</span>
+        <div class="relative z-10 text-white">
+            <p class="text-[10px] tracking-[0.3em] uppercase opacity-80 mb-1">Summer Expedition 2026</p>
+            <h1 class="font-serif font-black text-4xl mb-4">紐西蘭縱貫之旅</h1>
+            <div class="flex items-center gap-2">
+                <span class="bg-white/20 backdrop-blur-md text-white text-[10px] px-3 py-1 rounded-full">17 DAYS</span>
             </div>
         </div>
     </header>
 
-    <main class="p-6 md:p-10 space-y-10">
+    <main class="p-5 space-y-8" id="itinerary"></main>
 
-        <section class="bg-white rounded-ins shadow-ins-card overflow-hidden transition-all hover:shadow-lg">
-            <div class="relative h-56 overflow-hidden img-overlay">
-                <img src="https://images.unsplash.com/photo-1598091857921-b054817a7833?q=80&w=1000&auto=format&fit=crop" class="w-full h-full object-cover" alt="Christchurch">
-                <div class="absolute top-4 left-4 z-10 bg-ins-purple-soft/80 backdrop-blur-sm text-ins-purple-dark text-center py-2 px-3 rounded-xl">
-                    <span class="font-serif font-black text-2xl block">01</span>
-                    <span class="text-[9px] font-medium tracking-wider uppercase">DAY</span>
-                </div>
-            </div>
-            <div class="p-6">
-                <p class="text-sm text-ins-gray mb-1">6/5（五） Christchurch</p>
-                <h3 class="font-serif font-bold text-2xl text-ins-purple-dark mb-3">南島啟程</h3>
-                <p class="text-sm leading-relaxed text-ins-gray">抵達基督城 (CHC)，機場取車後前往市區休息。下午漫步市區、欣賞蜿蜒的河岸步道與雅芳河，遊覽植物園，輕鬆調整時差。</p>
-            </div>
-        </section>
-
-        <section class="bg-white rounded-ins shadow-ins-card overflow-hidden">
-            <div class="relative h-56 overflow-hidden img-overlay">
-                <img src="https://images.unsplash.com/photo-1621200115016-1681a2988f62?q=80&w=1000&auto=format&fit=crop" class="w-full h-full object-cover" alt="Tekapo">
-                <div class="absolute top-4 left-4 z-10 bg-ins-purple-soft/80 backdrop-blur-sm text-ins-purple-dark text-center py-2 px-3 rounded-xl">
-                    <span class="font-serif font-black text-2xl block">02</span>
-                    <span class="text-[9px] font-medium tracking-wider uppercase">DAY</span>
-                </div>
-            </div>
-            <div class="p-6">
-                <p class="text-sm text-ins-gray mb-1">6/6（六） Christchurch → Tekapo</p>
-                <h3 class="font-serif font-bold text-2xl text-ins-purple-dark mb-3">夢幻藍湖</h3>
-                <p class="text-sm leading-relaxed text-ins-gray">車程約 3 小時。前往湖水呈現神祕土耳其藍的 Lake Tekapo，參觀著名的牧羊人教堂。晚上在世界級暗空保護區欣賞震撼星空。</p>
-            </div>
-        </section>
-
-        <section class="bg-white rounded-ins shadow-ins-card overflow-hidden">
-            <div class="relative h-56 overflow-hidden img-overlay">
-                <img src="https://images.unsplash.com/photo-1600109915409-760778732a39?q=80&w=1000&auto=format&fit=crop" class="w-full h-full object-cover" alt="Mt Cook">
-                <div class="absolute top-4 left-4 z-10 bg-ins-purple-soft/80 backdrop-blur-sm text-ins-purple-dark text-center py-2 px-3 rounded-xl">
-                    <span class="font-serif font-black text-2xl block">03</span>
-                    <span class="text-[9px] font-medium tracking-wider uppercase">DAY</span>
-                </div>
-            </div>
-            <div class="p-6">
-                <p class="text-sm text-ins-gray mb-1">6/7（日） Tekapo → Mt Cook</p>
-                <h3 class="font-serif font-bold text-2xl text-ins-purple-dark mb-3">冰川健行</h3>
-                <p class="text-sm leading-relaxed text-ins-gray">前往紐西蘭最高峰 Mt Cook 國家公園。安排健行 Hooker Valley Track，近距離欣賞冰川、浮冰與巍峨雪山。</p>
-            </div>
-        </section>
-
-        <section class="bg-white rounded-ins shadow-ins-card overflow-hidden">
-            <div class="relative h-56 overflow-hidden img-overlay">
-                <img src="https://images.unsplash.com/photo-1598129953282-3d74c0e66046?q=80&w=1000&auto=format&fit=crop" class="w-full h-full object-cover" alt="Wanaka Tree">
-                <div class="absolute top-4 left-4 z-10 bg-ins-purple-soft/80 backdrop-blur-sm text-ins-purple-dark text-center py-2 px-3 rounded-xl">
-                    <span class="font-serif font-black text-2xl block">04</span>
-                    <span class="text-[9px] font-medium tracking-wider uppercase">DAY</span>
-                </div>
-            </div>
-            <div class="p-6">
-                <p class="text-sm text-ins-gray mb-1">6/8（一） Mt Cook → Wanaka</p>
-                <h3 class="font-serif font-bold text-2xl text-ins-purple-dark mb-3">湖畔小鎮</h3>
-                <p class="text-sm leading-relaxed text-ins-gray">經 Lindis Pass 前往 Wanaka。傍晚在湖邊散步，拍攝著名的 Wanaka Tree（孤獨樹），享受小鎮的寧靜。</p>
-            </div>
-        </section>
-
-        <section class="bg-white rounded-ins shadow-ins-card overflow-hidden">
-            <div class="relative h-56 overflow-hidden img-overlay">
-                <img src="https://images.unsplash.com/photo-1599818818820-2c7009e519e9?q=80&w=1000&auto=format&fit=crop" class="w-full h-full object-cover" alt="Wanaka Hike">
-                <div class="absolute top-4 left-4 z-10 bg-ins-purple-soft/80 backdrop-blur-sm text-ins-purple-dark text-center py-2 px-3 rounded-xl">
-                    <span class="font-serif font-black text-2xl block">05</span>
-                    <span class="text-[9px] font-medium tracking-wider uppercase">DAY</span>
-                </div>
-            </div>
-            <div class="p-6">
-                <p class="text-sm text-ins-gray mb-1">6/9（二） Wanaka</p>
-                <h3 class="font-serif font-bold text-2xl text-ins-purple-dark mb-3">漫遊時光</h3>
-                <p class="text-sm leading-relaxed text-ins-gray">Wanaka 小鎮悠閒活動。可自由安排湖邊散步、租單車環湖，或挑戰當地的健行步道，從高處俯瞰湖景。</p>
-            </div>
-        </section>
-
-        <section class="bg-white rounded-ins shadow-ins-card overflow-hidden">
-            <div class="relative h-56 overflow-hidden img-overlay">
-                <img src="https://images.unsplash.com/photo-1579761928343-2384954955b2?q=80&w=1000&auto=format&fit=crop" class="w-full h-full object-cover" alt="Haast Pass">
-                <div class="absolute top-4 left-4 z-10 bg-ins-purple-soft/80 backdrop-blur-sm text-ins-purple-dark text-center py-2 px-3 rounded-xl">
-                    <span class="font-serif font-black text-2xl block">06</span>
-                    <span class="text-[9px] font-medium tracking-wider uppercase">DAY</span>
-                </div>
-            </div>
-            <div class="p-6">
-                <p class="text-sm text-ins-gray mb-1">6/10（三） Wanaka → Franz Josef</p>
-                <h3 class="font-serif font-bold text-2xl text-ins-purple-dark mb-3">穿越峽谷</h3>
-                <p class="text-sm leading-relaxed text-ins-gray">穿越 Haast Pass 前往南島西海岸。這條公路沿途充滿雨林、瀑布與峽谷景觀，是一段視覺豐富的壯麗車程。</p>
-            </div>
-        </section>
-
-        <section class="bg-white rounded-ins shadow-ins-card overflow-hidden">
-            <div class="relative h-56 overflow-hidden img-overlay">
-                <img src="https://images.unsplash.com/photo-1628189855523-286d997f3942?q=80&w=1000&auto=format&fit=crop" class="w-full h-full object-cover" alt="Glacier Heli">
-                <div class="absolute top-4 left-4 z-10 bg-ins-purple-soft/80 backdrop-blur-sm text-ins-purple-dark text-center py-2 px-3 rounded-xl">
-                    <span class="font-serif font-black text-2xl block">07</span>
-                    <span class="text-[9px] font-medium tracking-wider uppercase">DAY</span>
-                </div>
-            </div>
-            <div class="p-6">
-                <p class="text-sm text-ins-gray mb-1">6/11（四） Franz Josef Glacier</p>
-                <h3 class="font-serif font-bold text-2xl text-ins-purple-dark mb-3">藍冰探險</h3>
-                <p class="text-sm leading-relaxed text-ins-gray">體驗紐西蘭特色活動：直升機冰川健行 (Heli Hike)。搭乘直升機降落在冰川上，在嚮導帶領下穿梭於藍色冰洞與冰塔之間。</p>
-            </div>
-        </section>
-
-        <section class="bg-white rounded-ins shadow-ins-card overflow-hidden">
-            <div class="relative h-56 overflow-hidden img-overlay">
-                <img src="https://images.unsplash.com/photo-1616790342525-46b0a88011c7?q=80&w=1000&auto=format&fit=crop" class="w-full h-full object-cover" alt="Haast Road">
-                <div class="absolute top-4 left-4 z-10 bg-ins-purple-soft/80 backdrop-blur-sm text-ins-purple-dark text-center py-2 px-3 rounded-xl">
-                    <span class="font-serif font-black text-2xl block">08</span>
-                    <span class="text-[9px] font-medium tracking-wider uppercase">DAY</span>
-                </div>
-            </div>
-            <div class="p-6">
-                <p class="text-sm text-ins-gray mb-1">6/12（五） Franz Josef → Wanaka</p>
-                <h3 class="font-serif font-bold text-2xl text-ins-purple-dark mb-3">重回高山</h3>
-                <p class="text-sm leading-relaxed text-ins-gray">穿越 Haast Pass 回到內陸，再次欣賞南島高山與森林景色。抵達 Wanaka 休息，為明日的皇后鎮之旅做準備。</p>
-            </div>
-        </section>
-
-        <section class="bg-white rounded-ins shadow-ins-card overflow-hidden">
-            <div class="relative h-56 overflow-hidden img-overlay">
-                <img src="https://images.unsplash.com/photo-1587397753696-a83d1c167d3e?q=80&w=1000&auto=format&fit=crop" class="w-full h-full object-cover" alt="Queenstown">
-                <div class="absolute top-4 left-4 z-10 bg-ins-purple-soft/80 backdrop-blur-sm text-ins-purple-dark text-center py-2 px-3 rounded-xl">
-                    <span class="font-serif font-black text-2xl block">09</span>
-                    <span class="text-[9px] font-medium tracking-wider uppercase">DAY</span>
-                </div>
-            </div>
-            <div class="p-6">
-                <p class="text-sm text-ins-gray mb-1">6/13（六） Wanaka → Queenstown</p>
-                <h3 class="font-serif font-bold text-2xl text-ins-purple-dark mb-3">冒險之都</h3>
-                <p class="text-sm leading-relaxed text-ins-gray">車程僅約 1 小時。抵達皇后鎮。安排搭乘 Skyline Gondola 到山頂，俯瞰 Wakatipu 湖景與 surrounding 山脈的壯麗全景。</p>
-            </div>
-        </section>
-
-        <section class="bg-white rounded-ins shadow-ins-card overflow-hidden">
-            <div class="relative h-56 overflow-hidden img-overlay">
-                <img src="https://images.unsplash.com/photo-1577791465406-8805f7ae22a9?q=80&w=1000&auto=format&fit=crop" class="w-full h-full object-cover" alt="Milford Sound">
-                <div class="absolute top-4 left-4 z-10 bg-ins-purple-soft/80 backdrop-blur-sm text-ins-purple-dark text-center py-2 px-3 rounded-xl">
-                    <span class="font-serif font-black text-2xl block">10</span>
-                    <span class="text-[9px] font-medium tracking-wider uppercase">DAY</span>
-                </div>
-            </div>
-            <div class="p-6">
-                <p class="text-sm text-ins-gray mb-1">6/14（日） Milford Sound</p>
-                <h3 class="font-serif font-bold text-2xl text-ins-purple-dark mb-3">世界奇觀</h3>
-                <p class="text-sm leading-relaxed text-ins-gray">前往 Fiordland 國家公園。搭乘遊船遊覽 Milford Sound，欣賞峽灣內宏偉的瀑布、懸崖峭壁與豐富的海洋生態。</p>
-            </div>
-        </section>
-
-        <section class="bg-white rounded-ins shadow-ins-card overflow-hidden">
-            <div class="relative h-56 overflow-hidden img-overlay">
-                <img src="https://images.unsplash.com/photo-1616781223945-813c90069e38?q=80&w=1000&auto=format&fit=crop" class="w-full h-full object-cover" alt="Arrowtown">
-                <div class="absolute top-4 left-4 z-10 bg-ins-purple-soft/80 backdrop-blur-sm text-ins-purple-dark text-center py-2 px-3 rounded-xl">
-                    <span class="font-serif font-black text-2xl block">11</span>
-                    <span class="text-[9px] font-medium tracking-wider uppercase">DAY</span>
-                </div>
-            </div>
-            <div class="p-6">
-                <p class="text-sm text-ins-gray mb-1">6/15（一） Queenstown</p>
-                <h3 class="font-serif font-bold text-2xl text-ins-purple-dark mb-3">周邊漫遊</h3>
-                <p class="text-sm leading-relaxed text-ins-gray">探索皇后鎮周邊。可前往 Glenorchy 感受魔戒取景地的魔幻，或到古老的Arrowtown 淘金小鎮感受歷史氣息。</p>
-            </div>
-        </section>
-
-        <section class="bg-white rounded-ins shadow-ins-card overflow-hidden">
-            <div class="relative h-56 overflow-hidden img-overlay">
-                <img src="https://images.unsplash.com/photo-1583091993466-26798b04a9d7?q=80&w=1000&auto=format&fit=crop" class="w-full h-full object-cover" alt="QT Shop">
-                <div class="absolute top-4 left-4 z-10 bg-ins-purple-soft/80 backdrop-blur-sm text-ins-purple-dark text-center py-2 px-3 rounded-xl">
-                    <span class="font-serif font-black text-2xl block">12</span>
-                    <span class="text-[9px] font-medium tracking-wider uppercase">DAY</span>
-                </div>
-            </div>
-            <div class="p-6">
-                <p class="text-sm text-ins-gray mb-1">6/16（二） Queenstown</p>
-                <h3 class="font-serif font-bold text-2xl text-ins-purple-dark mb-3">自由靈魂</h3>
-                <p class="text-sm leading-relaxed text-ins-gray">全日自由活動。可安排刺激的高空彈跳、在湖畔悠閒散步，或在市區選購精緻的紐西蘭特產。</p>
-            </div>
-        </section>
-
-        <section class="bg-white rounded-ins shadow-ins-card overflow-hidden">
-            <div class="relative h-56 overflow-hidden img-overlay">
-                <img src="https://images.unsplash.com/photo-1580193813605-7265f0259b32?q=80&w=1000&auto=format&fit=crop" class="w-full h-full object-cover" alt="Auckland">
-                <div class="absolute top-4 left-4 z-10 bg-ins-purple-soft/80 backdrop-blur-sm text-ins-purple-dark text-center py-2 px-3 rounded-xl">
-                    <span class="font-serif font-black text-2xl block">13</span>
-                    <span class="text-[9px] font-medium tracking-wider uppercase">DAY</span>
-                </div>
-            </div>
-            <div class="p-6">
-                <p class="text-sm text-ins-gray mb-1">6/17（三） Queenstown → Auckland</p>
-                <h3 class="font-serif font-bold text-2xl text-ins-purple-dark mb-3">飛往北島</h3>
-                <p class="text-sm leading-relaxed text-ins-gray">搭乘國內航班飛往北島奧克蘭 (AKL)。下午前往 Waiwera Beach 放鬆看海，感受北島不同的海岸風情。</p>
-            </div>
-        </section>
-
-        <section class="bg-white rounded-ins shadow-ins-card overflow-hidden">
-            <div class="relative h-56 overflow-hidden img-overlay">
-                <img src="https://images.unsplash.com/photo-1628189855523-286d997f3942?q=80&w=1000&auto=format&fit=crop" class="w-full h-full object-cover" alt="Hobbiton">
-                <div class="absolute top-4 left-4 z-10 bg-ins-purple-soft/80 backdrop-blur-sm text-ins-purple-dark text-center py-2 px-3 rounded-xl">
-                    <span class="font-serif font-black text-2xl block">14</span>
-                    <span class="text-[9px] font-medium tracking-wider uppercase">DAY</span>
-                </div>
-            </div>
-            <div class="p-6">
-                <p class="text-sm text-ins-gray mb-1">6/18（四） Auckland → Hobbiton → Rotorua</p>
-                <h3 class="font-serif font-bold text-2xl text-ins-purple-dark mb-3">哈比村夢</h3>
-                <p class="text-sm leading-relaxed text-ins-gray">前往 Hobbiton Movie Set，探訪魔戒電影中的哈比人洞穴。下午抵達具有獨特地熱景觀的城市 Rotorua。</p>
-            </div>
-        </section>
-
-        <section class="bg-white rounded-ins shadow-ins-card overflow-hidden">
-            <div class="relative h-56 overflow-hidden img-overlay">
-                <img src="https://images.unsplash.com/photo-1602447957788-b2a6549a997d?q=80&w=1000&auto=format&fit=crop" class="w-full h-full object-cover" alt="Waiotapu">
-                <div class="absolute top-4 left-4 z-10 bg-ins-purple-soft/80 backdrop-blur-sm text-ins-purple-dark text-center py-2 px-3 rounded-xl">
-                    <span class="font-serif font-black text-2xl block">15</span>
-                    <span class="text-[9px] font-medium tracking-wider uppercase">DAY</span>
-                </div>
-            </div>
-            <div class="p-6">
-                <p class="text-sm text-ins-gray mb-1">6/19（五） Rotorua</p>
-                <h3 class="font-serif font-bold text-2xl text-ins-purple-dark mb-3">地熱仙境</h3>
-                <p class="text-sm leading-relaxed text-ins-gray">參觀 Rotorua 的地熱公園與湖泊。推薦前往 Wai-O-Tapu Thermal Wonderland，欣賞色彩斑斕的地熱池與氣體噴孔。</p>
-            </div>
-        </section>
-
-        <section class="bg-white rounded-ins shadow-ins-card overflow-hidden">
-            <div class="relative h-56 overflow-hidden img-overlay">
-                <img src="https://images.unsplash.com/photo-1510618055416-d336a5394200?q=80&w=1000&auto=format&fit=crop" class="w-full h-full object-cover" alt="Glowworm">
-                <div class="absolute top-4 left-4 z-10 bg-ins-purple-soft/80 backdrop-blur-sm text-ins-purple-dark text-center py-2 px-3 rounded-xl">
-                    <span class="font-serif font-black text-2xl block">16</span>
-                    <span class="text-[9px] font-medium tracking-wider uppercase">DAY</span>
-                </div>
-            </div>
-            <div class="p-6">
-                <p class="text-sm text-ins-gray mb-1">6/20（六） Rotorua → Waitomo → Auckland</p>
-                <h3 class="font-serif font-bold text-2xl text-ins-purple-dark mb-3">地底星空</h3>
-                <p class="text-sm leading-relaxed text-ins-gray">前往 Waitomo 螢火蟲洞。搭乘竹筏靜靜滑入黑暗的洞穴中，欣賞如滿天星斗般的螢火蟲奇景。</p>
-            </div>
-        </section>
-
-        <section class="bg-white rounded-ins shadow-ins-card overflow-hidden mb-12">
-            <div class="relative h-56 overflow-hidden img-overlay">
-                <img src="https://images.unsplash.com/photo-1542289115-419b4b0e527f?q=80&w=1000&auto=format&fit=crop" class="w-full h-full object-cover" alt="Auckland Airport">
-                <div class="absolute top-4 left-4 z-10 bg-ins-purple-soft/80 backdrop-blur-sm text-ins-purple-dark text-center py-2 px-3 rounded-xl">
-                    <span class="font-serif font-black text-2xl block">17</span>
-                    <span class="text-[9px] font-medium tracking-wider uppercase">DAY</span>
-                </div>
-            </div>
-            <div class="p-6">
-                <p class="text-sm text-ins-gray mb-1">6/21（日） Auckland</p>
-                <h3 class="font-serif font-bold text-2xl text-ins-purple-dark mb-3">珍重再見</h3>
-                <p class="text-sm leading-relaxed text-ins-gray">前往奧克蘭機場 (AKL) 搭機，依依不捨地結束這趟充滿回憶的紐西蘭奢華旅程。</p>
-            </div>
-        </section>
-
-    </main>
-
-    <footer class="bg-ins-purple-dark text-ins-purple-soft text-center p-8 mt-16 font-serif text-sm">
-        New Zealand Elite Tour | Summer 2026
+    <footer class="bg-ins-purple-dark text-ins-purple-soft text-center p-8 mt-10 font-serif text-xs">
+        New Zealand Elite Tour | 2026
     </footer>
 
+    <script>
+        const days = [
+            { day: "01", date: "6/5 (五)", loc: "Christchurch", title: "南島啟程", desc: "抵達機場取車。下午漫步市區、欣賞雅芳河，遊覽植物園調整時差。", img: "christchurch,nz" },
+            { day: "02", date: "6/6 (六)", loc: "Tekapo", title: "夢幻藍湖", desc: "前往 Lake Tekapo 參觀牧羊人教堂。晚上欣賞世界級暗空保護區星空。", img: "tekapo,church" },
+            { day: "03", date: "6/7 (日)", loc: "Mt Cook", title: "冰川健行", desc: "國家公園 Hooker Valley Track 健行，近距離欣賞冰川與雪山。", img: "mountcook,glacier" },
+            { day: "04", date: "6/8 (一)", loc: "Wanaka", title: "湖畔小鎮", desc: "經 Lindis Pass 前往 Wanaka。傍晚拍攝著名的 Wanaka Tree 孤獨樹。", img: "wanaka,lake" },
+            { day: "05", date: "6/9 (二)", loc: "Wanaka", title: "漫遊時光", desc: "Wanaka 悠閒活動。可自由安排湖邊散步、租單車或挑戰健行步道。", img: "wanaka,mountain" },
+            { day: "06", date: "6/10 (三)", loc: "Franz Josef", title: "穿越峽谷", desc: "穿越 Haast Pass 前往西海岸，沿途盡是雨林、瀑布與峽谷景觀。", img: "nz,rainforest" },
+            { day: "07", date: "6/11 (四)", loc: "Franz Josef Glacier", title: "藍冰探險", desc: "直升機冰川健行 (Heli Hike)。降落在冰川上穿梭於藍色冰洞之間。", img: "glacier,ice" },
+            { day: "08", date: "6/12 (五)", loc: "Wanaka", title: "重回高山", desc: "穿越 Haast Pass 回到內陸，再次欣賞南島壯麗的高山森林景色。", img: "nz,forest" },
+            { day: "09", date: "6/13 (六)", loc: "Queenstown", title: "冒險之都", desc: "抵達皇后鎮。搭乘 Skyline Gondola 到山頂俯瞰 Wakatipu 湖景。", img: "queenstown,lake" },
+            { day: "10", date: "6/14 (日)", loc: "Milford Sound", title: "世界奇觀", desc: "搭乘遊船遊覽 Milford Sound，欣賞峽灣瀑布、懸崖與海洋生態。", img: "milfordsound,nz" },
+            { day: "11", date: "6/15 (一)", loc: "Queenstown", title: "周邊漫遊", desc: "探索 Glenorchy 魔戒取景地或到古老的 Arrowtown 淘金小鎮。", img: "arrowtown,nz" },
+            { day: "12", date: "6/16 (二)", loc: "Queenstown", title: "自由靈魂", desc: "全日自由活動。可安排高空彈跳、湖畔散步或選購特產。", img: "queenstown,city" },
+            { day: "13", date: "6/17 (三)", loc: "Auckland", title: "飛往北島", desc: "飛往奧克蘭。下午前往 Waiwera Beach 感受北島海岸風情。", img: "auckland,beach" },
+            { day: "14", date: "6/18 (四)", loc: "Hobbiton", title: "哈比村夢", desc: "探訪魔戒哈比人洞穴。下午抵達地熱城市 Rotorua。", img: "hobbiton,nz" },
+            { day: "15", date: "6/19 (五)", loc: "Rotorua", title: "地熱仙境", desc: "參觀 Wai-O-Tapu，欣賞色彩斑斕的地熱池與氣體噴孔。", img: "rotorua,geothermal" },
+            { day: "16", date: "6/20 (六)", loc: "Waitomo", title: "地底星空", desc: "搭船進入 Waitomo 螢火蟲洞，欣賞如滿天星斗般的奇景。", img: "glowworm,cave" },
+            { day: "17", date: "6/21 (日)", loc: "Auckland", title: "珍重再見", desc: "前往奧克蘭機場搭機，結束這趟回憶滿滿的紐西蘭之旅。", img: "auckland,airport" }
+        ];
+
+        const container = document.getElementById('itinerary');
+        container.innerHTML = days.map(d => `
+            <section class="bg-white rounded-ins shadow-ins-card overflow-hidden">
+                <div class="relative h-52 overflow-hidden img-overlay img-placeholder">
+                    <img src="https://loremflickr.com/600/400/${d.img}" class="w-full h-full object-cover" alt="${d.loc}" loading="lazy">
+                    <div class="absolute top-4 left-4 z-10 bg-ins-purple-soft/90 backdrop-blur-sm text-ins-purple-dark text-center py-1.5 px-3 rounded-xl shadow-sm">
+                        <span class="font-serif font-black text-xl block">${d.day}</span>
+                        <span class="text-[8px] font-bold tracking-tighter uppercase">DAY</span>
+                    </div>
+                </div>
+                <div class="p-6">
+                    <div class="flex justify-between items-start mb-1">
+                        <p class="text-[11px] font-medium text-ins-purple-dark opacity-70 italic">${d.date} · ${d.loc}</p>
+                    </div>
+                    <h3 class="font-serif font-black text-xl text-ins-purple-dark mb-2">${d.title}</h3>
+                    <p class="text-xs leading-relaxed text-ins-gray font-light">${d.desc}</p>
+                </div>
+            </section>
+        `).join('');
+    </script>
 </body>
 </html>
