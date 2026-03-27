@@ -3,110 +3,124 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NZ 17 Days | Aida's Travel Guide</title>
+    <title>Aida's New Zealand Tour 2026</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@700;900&display=swap" rel="stylesheet">
     <style>
-        body { background-color: #F9F7FF; color: #4A4A4A; font-family: sans-serif; }
+        body { background-color: #FAF9FF; color: #4B4B4B; font-family: sans-serif; }
         .serif { font-family: 'Noto Serif TC', serif; }
-        .purple-gradient { background: linear-gradient(135deg, #F3E8FF 0%, #E9D5FF 100%); }
-        .card-purple { background: #FFFFFF; border: 1px solid #F3E8FF; border-radius: 20px; box-shadow: 0 10px 20px rgba(107, 33, 168, 0.03); }
-        /* 強制 16:9 比例 */
-        .aspect-16-9 { aspect-ratio: 16 / 9; width: 100%; object-fit: cover; }
+        .canva-shadow { box-shadow: 0 12px 30px rgba(107, 33, 168, 0.05); }
+        .gradient-purple { background: linear-gradient(135deg, #F8F5FF 0%, #F3E8FF 100%); }
+        .aspect-16-9 { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; }
+        .sticky-nav { position: sticky; top: 0; z-index: 50; background: rgba(250, 249, 255, 0.8); backdrop-filter: blur(10px); }
     </style>
 </head>
-<body class="pb-12">
+<body class="pb-20">
 
-    <header class="relative h-[40vh] flex items-center justify-center overflow-hidden">
+    <header class="relative h-[45vh] flex items-center justify-center overflow-hidden">
         <img src="cover.jpg" class="absolute inset-0 w-full h-full object-cover" onerror="this.src='https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=1200'">
-        <div class="absolute inset-0 bg-purple-900/20"></div>
+        <div class="absolute inset-0 bg-purple-900/10"></div>
         <div class="relative z-10 text-center text-white px-4">
-            <h1 class="serif text-4xl md:text-5xl font-black mb-2 drop-shadow-lg">紐西蘭南北島縱貫</h1>
-            <p class="tracking-[0.2em] text-sm opacity-90">JUNE 4 - JUNE 21, 2026</p>
-            <div class="mt-4 inline-block bg-white/20 backdrop-blur-md px-4 py-1 rounded-full text-xs">預算預估：NT$ 150,000</div>
+            <h1 class="serif text-5xl font-black mb-3 drop-shadow-xl">紐西蘭。冬日縱貫</h1>
+            <p class="tracking-[0.3em] text-sm uppercase opacity-90 font-light">Summer Expedition 2026</p>
         </div>
     </header>
 
-    <main class="max-w-2xl mx-auto px-6 mt-10 space-y-12">
+    <main class="max-w-2xl mx-auto px-6 -mt-10">
         
-        <div id="itinerary" class="space-y-10">
+        <section class="relative z-20 gradient-purple rounded-[32px] p-8 canva-shadow border border-white mb-16">
+            <div class="flex items-center justify-between mb-8">
+                <span class="bg-purple-600 text-white px-4 py-1 rounded-full text-[10px] font-bold tracking-widest uppercase">Flight & Info</span>
+                <span class="serif text-xl font-bold text-purple-900 italic">NT$ 150,000</span>
             </div>
-
-        <hr class="border-purple-100">
-
-        <section class="card-purple p-8 bg-purple-50/50">
-            <h2 class="serif text-2xl text-purple-800 mb-6 flex items-center">
-                <span class="mr-2">🎒</span> 六月冬季必備
-            </h2>
-            <ul class="grid grid-cols-2 gap-4 text-sm text-gray-600">
-                <li class="flex items-center">○ 發熱衣物 (洋蔥式穿法)</li>
-                <li class="flex items-center">○ 防水防風防寒外套</li>
-                <li class="flex items-center">○ 暖暖包 / 羊毛襪</li>
-                <li class="flex items-center">○ 太陽眼鏡 (雪地防炫光)</li>
-                <li class="flex items-center">○ 保濕乳液 / 護唇膏</li>
-                <li class="flex items-center">○ 萬用轉接頭 (八字型)</li>
-            </ul>
+            
+            <div class="space-y-6">
+                <div class="flex gap-4">
+                    <div class="text-2xl mt-1">✈️</div>
+                    <div>
+                        <h4 class="font-bold text-purple-900 mb-1">國際航線：中華航空</h4>
+                        <p class="text-xs text-purple-400 leading-relaxed italic">6/4 CI53 & 6/21 CI54<br>經布里斯本中停，行李直掛到底</p>
+                    </div>
+                </div>
+                <div class="flex gap-4">
+                    <div class="text-2xl mt-1">🏔️</div>
+                    <div>
+                        <h4 class="font-bold text-purple-900 mb-1">紐西蘭國內聯絡線</h4>
+                        <p class="text-xs text-purple-400 leading-relaxed italic">6/4 奧克蘭 ➔ 基督城<br>6/17 皇后鎮 ➔ 奧克蘭</p>
+                    </div>
+                </div>
+            </div>
         </section>
 
-        <section class="card-purple p-8 border-red-100 bg-red-50/30">
-            <h2 class="serif text-2xl text-red-800 mb-6 flex items-center">
-                <span class="mr-2">🚫</span> 入境嚴禁攜帶
-            </h2>
-            <div class="space-y-4 text-sm leading-relaxed text-red-900/80">
-                <div class="p-3 bg-white/50 rounded-lg">
-                    <p class="font-bold">⚠️ 生鮮與食品類：</p>
-                    <p>嚴禁肉類製品（含泡麵肉包）、生鮮蔬果、種子、蜂蜜、蛋奶製品。紐西蘭海關極其嚴格，違者罰款 $400 紐幣起。</p>
-                </div>
-                <div class="p-3 bg-white/50 rounded-lg">
-                    <p class="font-bold">⚠️ 航空與布里斯本中轉：</p>
-                    <p>行動電源必須隨身攜帶（不可托運）、嚴禁易燃物、噴霧罐。登山鞋/露營裝備必須徹底清潔，不可沾有泥土。</p>
-                </div>
+        <div id="itinerary" class="space-y-12"></div>
+
+        <section class="mt-20 p-8 rounded-[32px] border-2 border-dashed border-purple-200">
+            <h2 class="serif text-2xl text-purple-900 mb-6 text-center italic">🎒 粉絲敲碗：六月必備行李</h2>
+            <div class="grid grid-cols-2 gap-y-4 text-xs text-gray-500 font-light px-4">
+                <p>● 發熱衣物 (保暖首選)</p>
+                <p>● 防水抗寒外套</p>
+                <p>● 羊毛襪 / 厚底鞋</p>
+                <p>● 護唇膏 (極乾燥)</p>
+                <p>● 墨鏡 (雪地防眩)</p>
+                <p>● 八字型萬用插頭</p>
+            </div>
+        </section>
+
+        <section class="mt-8 p-8 rounded-[32px] bg-red-50/40 border border-red-100">
+            <h2 class="serif text-2xl text-red-800 mb-6 text-center italic">🚫 絕對不能帶入關</h2>
+            <div class="space-y-4 text-xs leading-loose text-red-900/70">
+                <p><strong>【嚴格禁止】</strong> 肉製品、泡麵肉包、生鮮水果、蜂蜜、植物種子。紐西蘭海關極嚴，違者罰 $400 紐幣起。</p>
+                <p><strong>【航安提醒】</strong> 行動電源需隨身、嚴禁托運；登山靴若沾泥土必須徹底清潔否則會被攔下。</p>
             </div>
         </section>
 
     </main>
 
-    <footer class="text-center mt-20 text-purple-300 text-xs serif tracking-widest">
-        AIDA'S PLAYFUL BEAUTY GUIDE | 2026 NZ
+    <footer class="text-center mt-24 py-10 opacity-30 text-[10px] tracking-[0.4em] uppercase">
+        Design by Aida's Playful Beauty Guide
     </footer>
 
     <script>
         const trip = [
-            { d: "01", date: "6/5 (五)", loc: "Christchurch", title: "南島啟程", desc: "抵達基督城，機場租車後開往市區休息。" },
-            { d: "02", date: "6/6 (六)", loc: "Tekapo", title: "夢幻藍湖", desc: "前往 Lake Tekapo 參觀牧羊人教堂。晚上欣賞世界級暗空保護區星空。" },
-            { d: "03", date: "6/7 (日)", loc: "Mt Cook", title: "冰川健行", desc: "前往紐西蘭最高峰 Mt Cook 國家公園。可走 Hooker Valley Track，近距離欣賞冰川與雪山。" },
-            { d: "04", date: "6/8 (一)", loc: "Wanaka", title: "湖畔小鎮", desc: "經 Lindis Pass 前往 Wanaka。傍晚可在湖邊散步並拍攝著名的 Wanaka Tree。" },
-            { d: "05", date: "6/9 (二)", loc: "Wanaka", title: "漫遊時光", desc: "Wanaka 小鎮悠閒活動。可安排湖邊散步或健行。" },
-            { d: "06", date: "6/10 (三)", loc: "Franz Josef", title: "穿越峽谷", desc: "穿越 Haast Pass 前往西海岸。沿途可看到雨林、瀑布與峽谷景觀。" },
-            { d: "07", date: "6/11 (四)", loc: "Franz Josef Glacier", title: "藍冰探險", desc: "直升機冰川健行 (Heli Hike)，近距離走在冰川上。" },
-            { d: "08", date: "6/12 (五)", loc: "Wanaka", title: "重回高山", desc: "穿越 Haast Pass 回到內陸，再次欣賞南島高山與森林景色。" },
-            { d: "09", date: "6/13 (六)", loc: "Queenstown", title: "冒險之都", desc: "抵達紐西蘭最著名的旅遊城市皇后鎮。可搭 Skyline Gondola 俯瞰湖景。" },
-            { d: "10", date: "6/14 (日)", loc: "Milford Sound", title: "世界奇觀", desc: "搭船遊覽 Milford Sound 峽灣瀑布與壯觀山壁。" },
-            { d: "11", date: "6/15 (一)", loc: "Queenstown", title: "周邊漫遊", desc: "Queenstown 周邊活動，可前往 Glenorchy 或 Arrowtown 小鎮。" },
-            { d: "12", date: "6/16 (二)", loc: "Queenstown", title: "自由靈魂", desc: "全日自由活動。湖畔散步或市區逛街採買。" },
-            { d: "13", date: "6/17 (三)", loc: "Auckland", title: "飛往北島", desc: "搭乘國內航班飛往北島 Auckland。下午前往 Waiwera Beach 看海。" },
-            { d: "14", date: "6/18 (四)", loc: "Hobbiton", title: "哈比村夢", desc: "前往魔戒電影拍攝地 Hobbiton。下午抵達地熱城市 Rotorua。" },
-            { d: "15", date: "6/19 (五)", loc: "Rotorua", title: "地熱仙境", desc: "參觀地熱景觀與湖泊。可前往 Wai-O-Tapu 地熱公園。" },
-            { d: "16", date: "6/20 (六)", loc: "Waitomo", title: "地底星空", desc: "前往 Waitomo 螢火蟲洞。搭船欣賞洞穴內如星空般的螢火蟲。" },
-            { d: "17", date: "6/21 (日)", loc: "Auckland", title: "珍重再見", desc: "前往奧克蘭機場搭機回程。結束 17 天奢華之旅。" }
+            { d: "01", date: "6/5", loc: "Christchurch", title: "南島啟程", desc: "抵達基督城，機場租車後開往市區休息。" },
+            { d: "02", date: "6/6", loc: "Tekapo", title: "夢幻藍湖", desc: "探訪 Lake Tekapo 牧羊人教堂，夜宿全球星空保護區。" },
+            { d: "03", date: "6/7", loc: "Mt Cook", title: "冰川健行", desc: "前進紐西蘭最高峰，挑戰 Hooker Valley Track 絕美冰川景觀。" },
+            { d: "04", date: "6/8", loc: "Wanaka", title: "湖畔小鎮", desc: "經 Lindis Pass 到達瓦納卡，拜訪著名的孤獨樹。" },
+            { d: "05", date: "6/9", loc: "Wanaka", title: "漫遊時光", desc: "Wanaka 全日悠閒漫遊，可選擇登山或沿湖散步。" },
+            { d: "06", date: "6/10", loc: "Franz Josef", title: "穿越峽谷", desc: "穿越 Haast Pass，飽覽西海岸壯麗的雨林與瀑布。" },
+            { d: "07", date: "6/11", loc: "Franz Josef Glacier", title: "藍冰探險", desc: "直升機冰川健行 (Heli Hike)，站在藍色冰川之巔。" },
+            { d: "08", date: "6/12", loc: "Wanaka", title: "重回高山", desc: "再次穿越山脈森林回到內陸，感受冬日純淨氣息。" },
+            { d: "09", date: "6/13", loc: "Queenstown", title: "冒險之都", desc: "進入最美城市皇后鎮，搭纜車俯瞰瓦卡蒂普湖全景。" },
+            { d: "10", date: "6/14", loc: "Milford Sound", title: "世界奇觀", desc: "世界級峽灣遊船，看巨大的瀑布與壯闊懸崖。" },
+            { d: "11", date: "6/15", loc: "Queenstown", title: "周邊漫遊", desc: "拜訪格萊諾基或箭鎮，尋找魔戒電影中的絕景。" },
+            { d: "12", date: "6/16", loc: "Queenstown", title: "自由靈魂", desc: "皇后鎮全日放鬆，享受咖啡、美食與湖畔慢活。" },
+            { d: "13", date: "6/17", loc: "Auckland", title: "飛往北島", desc: "國內線直飛奧克蘭，下午前往海邊看海吹風。" },
+            { d: "14", date: "6/18", loc: "Hobbiton", title: "哈比村夢", desc: "魔戒迷必看！進入哈比人洞穴感受中土世界魔力。" },
+            { d: "15", date: "6/19", loc: "Rotorua", title: "地熱仙境", desc: "親臨 Wai-O-Tapu，欣賞色彩繽紛的火山地熱奇觀。" },
+            { d: "16", date: "6/20", loc: "Waitomo", title: "地底星空", desc: "划船進入螢火蟲洞，欣賞漫天藍色繁星的奇蹟。" },
+            { d: "17", date: "6/21", loc: "Auckland", title: "珍重再見", desc: "前往奧克蘭機場，帶回 17 天滿滿的南十字星回憶。" }
         ];
 
         const container = document.getElementById('itinerary');
         container.innerHTML = trip.map(item => `
-            <article class="card-purple overflow-hidden">
-                <img src="day${parseInt(item.d)}.jpg" class="aspect-16-9" alt="Day ${item.d}" onerror="this.src='https://images.unsplash.com/photo-1470770841072-f978cf4d019e?w=800'">
-                <div class="p-6">
-                    <div class="flex justify-between items-baseline mb-2">
-                        <span class="text-purple-400 text-[10px] font-bold tracking-widest uppercase">DAY ${item.d}</span>
-                        <span class="text-gray-300 text-[10px]">${item.date}</span>
-                    </div>
-                    <h3 class="serif text-2xl text-purple-900 mb-3">${item.title}</h3>
-                    <p class="text-sm text-gray-500 leading-relaxed font-light">${item.desc}</p>
-                    <div class="mt-4 pt-4 border-t border-purple-50 flex items-center text-[10px] text-purple-300">
-                        <span class="mr-2">📍</span> ${item.loc}
+            <div class="bg-white rounded-[32px] overflow-hidden canva-shadow border border-purple-50">
+                <div class="relative overflow-hidden">
+                    <img src="day${parseInt(item.d)}.jpg" class="aspect-16-9 transition-transform duration-500 hover:scale-105" onerror="this.src='https://images.unsplash.com/photo-1470770841072-f978cf4d019e?w=800'">
+                    <div class="absolute top-4 left-4 bg-white/90 backdrop-blur-md px-4 py-2 rounded-2xl text-center">
+                        <span class="serif text-xl font-black text-purple-900 block leading-none">${item.d}</span>
+                        <span class="text-[8px] font-bold text-purple-300 uppercase tracking-widest">Day</span>
                     </div>
                 </div>
-            </article>
+                <div class="p-8">
+                    <div class="flex items-center gap-2 mb-2">
+                        <span class="text-[10px] text-purple-400 font-bold uppercase">${item.loc}</span>
+                        <span class="w-1 h-1 bg-purple-200 rounded-full"></span>
+                        <span class="text-[10px] text-gray-300">${item.date}</span>
+                    </div>
+                    <h3 class="serif text-2xl text-purple-900 mb-3">${item.title}</h3>
+                    <p class="text-xs text-gray-400 leading-loose font-light">${item.desc}</p>
+                </div>
+            </div>
         `).join('');
     </script>
 </body>
